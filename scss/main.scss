@@ -1,0 +1,45 @@
+@import 'partials/variables';
+@import 'partials/normalize';
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Shrikhand&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: $font-secondary;
+}
+
+.home-header {
+  font-family: $font-primary;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  & h1 {
+    font-size: 1.8em;
+    font-weight: 500;
+    margin: 1.1rem 0 0.675rem;
+  }
+}
+
+.location {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #eaeaea;
+  padding: 1em 0;
+  box-shadow: inset 0px 8px 8px -10px rgba(0, 0, 0, 0.5);
+
+  &__name {
+    font-weight: 500;
+    opacity: 0.7;
+    padding-right: 1.5em;
+
+    & .fa-map-marker-alt {
+      padding-right: 1em;
+    }
+  }
+}
