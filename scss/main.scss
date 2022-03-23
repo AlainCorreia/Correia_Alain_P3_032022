@@ -103,3 +103,67 @@ a {
     }
   }
 }
+
+.how-to {
+  @include section-padding;
+
+  &__title {
+    @include title;
+  }
+}
+
+.instructions-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  @include section-margin;
+}
+
+.instructions {
+  width: calc(100% - 0.75rem);
+  height: 4.6em;
+  margin-left: 0.75rem;
+  margin-bottom: 1.5rem;
+  background: $color-background;
+  border-radius: 1.5em;
+  @include shadow;
+  position: relative;
+
+  &--purple {
+    background: #f5edff;
+  }
+
+  &__description {
+    display: flex;
+    align-items: baseline;
+    position: absolute;
+    font-size: 1em;
+    font-weight: 500;
+    top: 2.3rem - 0.75rem;
+    left: -0.75em;
+  }
+
+  &__description-number {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 0.825em;
+    font-weight: 400;
+    color: #fff;
+    background: $color-primary;
+    width: 1.5rem;
+    height: 1.5rem;
+    border-radius: 50%;
+    margin-right: 1.25rem;
+  }
+
+  &__description-icon {
+    opacity: 0.5;
+    margin-right: 1.5rem;
+
+    &--purple {
+      color: $color-primary;
+      opacity: 1;
+    }
+  }
+}

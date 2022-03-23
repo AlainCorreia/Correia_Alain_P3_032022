@@ -1,3 +1,19 @@
+@mixin title {
+  width: $section-width;
+  margin: 0 auto 1.75rem;
+  font-size: 1.5rem;
+  font-weight: 700;
+}
+
+@mixin section-padding {
+  padding: 3rem 0;
+}
+
+@mixin section-margin {
+  width: $section-width;
+  margin: auto;
+}
+
 @mixin shadow($opacity: 0.2) {
   box-shadow: 4px 4px 10px 0px rgba(0, 0, 0, $opacity);
 }
