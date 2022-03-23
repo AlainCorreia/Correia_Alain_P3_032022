@@ -349,6 +349,11 @@ body {
   font-family: "Roboto", sans-serif;
 }
 
+a {
+  color: #000;
+  text-decoration: none;
+}
+
 .home-header {
   font-family: "Shrikhand", cursive;
   display: flex;
@@ -376,4 +381,53 @@ body {
 }
 .location__name .fa-map-marker-alt {
   padding-right: 1em;
+}
+
+.presentation {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: #F6F6F6;
+  padding: 2.5rem 0 3.4rem;
+}
+.presentation__title {
+  width: 75%;
+  text-align: center;
+  font-size: 1.5em;
+  padding-bottom: 1rem;
+}
+.presentation__description {
+  width: 90%;
+  text-align: center;
+  font-size: 1.1em;
+  font-weight: 300;
+  padding-bottom: 1.9rem;
+}
+.presentation__btn {
+  position: relative;
+  background: linear-gradient(to bottom right, #FF79DA, #9356DC);
+  color: #FFF;
+  font-size: 0.965rem;
+  font-weight: 500;
+  padding: 1rem 1.5rem;
+  border-radius: 2rem;
+  box-shadow: 4px 4px 10px 0px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+}
+.presentation__btn:hover::after {
+  opacity: 1;
+}
+.presentation__btn::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  border-radius: 2rem;
+  z-index: -1;
+  opacity: 0;
+  background: linear-gradient(to bottom right, #ff8de0, #9e67e0);
+  box-shadow: 4px 4px 10px 0px rgba(0, 0, 0, 0.15);
+  transition: opacity 150ms;
 }/*# sourceMappingURL=main.css.map */
