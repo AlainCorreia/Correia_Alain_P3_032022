@@ -636,4 +636,36 @@ h3 {
   100% {
     transform: scale(1);
   }
+}
+footer {
+  background: #353535;
+  padding-bottom: 1.5rem;
+}
+
+.footer-nav {
+  padding-left: 7%;
+}
+.footer-nav ul {
+  list-style: none;
+}
+.footer-nav__heading {
+  font-family: "Shrikhand", cursive;
+  font-size: 1.125rem;
+  color: #FFF;
+  padding: 1.625rem 0 1.25rem;
+}
+.footer-nav__link {
+  padding-bottom: 0.5rem;
+}
+.footer-nav__link a {
+  font-size: 0.965rem;
+  color: #FFF;
+}
+.footer-nav__link .flatware-icon {
+  font-size: 0.75rem;
+  padding-right: 1.25rem;
+}
+.footer-nav__link .handshake-icon {
+  font-size: 0.625rem;
+  padding-right: 1.25rem;
 }/*# sourceMappingURL=main.css.map */
