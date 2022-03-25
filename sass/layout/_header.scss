@@ -1,0 +1,8 @@
+.home-header {
+  font-family: $font-secondary;
+  @include flex-center;
+
+  &__title {
+    margin: 1.1rem 0 0.675rem;
+  }
+}

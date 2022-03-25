@@ -1,0 +1,12 @@
+// Box model setup
+*, *::before, *::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+// Basic style for links
+a {
+  color: #000;
+  text-decoration: none;
+}

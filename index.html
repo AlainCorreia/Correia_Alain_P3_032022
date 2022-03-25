@@ -5,14 +5,13 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Ohmyfood</title>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
-    integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ=="
-    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="./css/normalize.css">
   <link rel="stylesheet" href="./css/main.css">
 </head>
 <body>
   <header class="home-header">
-    <h1 class="home-header__logo">ohmyfood</h1>
+    <h1 class="home-header__title">ohmyfood</h1>
   </header>
   <main>
     <div class="loading-overlay">
@@ -20,40 +19,36 @@
       <div class="loading-overlay__logo">ohmyfood</div>
     </div>
     <div class="location">
-      <div class="location__name"><i class="fas fa-map-marker-alt"></i>Paris, Belleville</div>
+      <div class="location__name"><i class="fas fa-map-marker-alt location-icon"></i>Paris, Belleville</div>
     </div>
     <section class="presentation">
       <h2 class="presentation__title">Réservez le menu qui vous convient</h2>
       <p class="presentation__description">Découvrez des restaurants d'exception, sélectionnés par nos soins.</p>
       <a href="#restaurants" class="presentation__btn">Explorer nos restaurants</a>
     </section>
-    <section class="how-to">
-      <h2 class="how-to__title">Fonctionnement</h2>
+    <section class="instructions-container">
+      <h2 class="instructions-container__title">Fonctionnement</h2>
       <div class="instructions-wrapper">
         <div class="instructions">
           <div class="instructions__description">
-            <div class="instructions__description-number">1</div><i
-              class="fas fa-mobile-alt fa-lg instructions__description-icon"></i>Choisissez un restaurant
+            <div class="instructions__description-number">1</div><i class="fas fa-mobile-alt fa-lg instructions__description-icon"></i>Choisissez un restaurant
           </div>
         </div>
         <div class="instructions">
           <div class="instructions__description">
-            <div class="instructions__description-number">2</div><i
-              class="fas fa-list-ul instructions__description-icon"></i>Composez votre menu
+            <div class="instructions__description-number">2</div><i class="fas fa-list-ul instructions__description-icon"></i>Composez votre menu
           </div>
         </div>
-        <div class="instructions instructions--purple">
+        <div class="instructions instructions--light-purple">
           <div class="instructions__description">
-            <div class="instructions__description-number">3</div><i
-              class="fas fa-store instructions__description-icon instructions__description-icon--purple"></i>Dégustez au
-            restaurant
+            <div class="instructions__description-number">3</div><i class="fas fa-store instructions__description-icon instructions__description-icon--purple"></i>Dégustez au restaurant
           </div>
         </div>
       </div>
     </section>
-    <section id="restaurants" class="restaurants">
-      <h2 class="restaurants__title">Restaurants</h2>
-      <div class="restaurant-container">
+    <section id="restaurants" class="restaurants-container">
+      <h2 class="restaurants-container__title">Restaurants</h2>
+      <div class="restaurant-wrapper">
         <div class="card-restaurant">
           <a href="#">
             <div class="card-restaurant__image">
@@ -107,8 +102,7 @@
         <div class="card-restaurant">
           <a href="#">
             <div class="card-restaurant__image">
-              <img src="./images/louis-hansel-shotsoflouis-qNBGVyOCY8Q-unsplash.jpg"
-                alt="Restaurant Le délice des sens">
+              <img src="./images/louis-hansel-shotsoflouis-qNBGVyOCY8Q-unsplash.jpg" alt="Restaurant Le délice des sens">
             </div>
             <div class="card-restaurant__description">
               <div>
@@ -128,15 +122,13 @@
     <nav class="footer-nav">
       <ul>
         <li class="footer-nav__heading">ohmyfood</li>
-        <li class="footer-nav__link"><a href="#"><i class="fas fa-utensils fa-fw flatware-icon"></i>Proposer un
-            restaurant</a></li>
-        <li class="footer-nav__link"><a href="#"><i class="fas fa-hands-helping fa-fw handshake-icon"></i>Devenir
-            partenaire</a></li>
+        <li class="footer-nav__link"><a href="#"><i class="fas fa-utensils fa-fw flatware-icon"></i>Proposer un restaurant</a></li>
+        <li class="footer-nav__link"><a href="#"><i class="fas fa-hands-helping fa-fw handshake-icon"></i>Devenir partenaire</a></li>
         <li class="footer-nav__link"><a href="#">Mentions légales</a></li>
         <li class="footer-nav__link"><a href="mailto:contact@ohmyfood.com">Contact</a></li>
       </ul>
     </nav>
   </footer>
-  
+
 </body>
 </html>
