@@ -21,3 +21,21 @@
   justify-content: center;
   align-items: center;
 }
+
+@mixin mobile-large {
+  @media screen and (min-width: map-get($breakpoints, mobile-large)) {
+    @content;
+  }
+}
+
+@mixin tablet {
+  @media screen and (min-width: map-get($breakpoints, tablet)) {
+    @content;
+  }
+}
+
+@mixin desktop {
+  @media screen and (min-width: map-get($breakpoints, desktop)) {
+    @content;
+  }
+}
