@@ -1,8 +1,8 @@
-.home-header {
-  font-family: $font-secondary;
+.header {
   @include flex-center;
 
   &__title {
+    font-family: $font-secondary;
     margin: 1.1rem 0 0.675rem;
   }
 }

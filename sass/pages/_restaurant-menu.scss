@@ -1,0 +1,126 @@
+.restaurant-menu-container {
+  background: $color-background;
+  border-radius: 2.5rem 2.5rem 0 0;
+  margin-top: -3.25rem;
+  position: relative;
+}
+
+.restaurant-heading {
+  @include section-margin;
+  @include flex-center;
+  justify-content: space-between;
+  padding-top: 2.25rem;
+
+  &__name {
+    font-family: $font-secondary;
+    font-size: 1.75rem;
+    font-weight: 500;
+  }
+}
+
+.restaurant-course {
+  @include section-margin;
+  text-transform: uppercase;
+  font-weight: 300;
+  margin-top: 2.25rem;
+
+  &__separator {
+    width: 2.5rem;
+    border-top: 3px solid $color-tertiary;
+    margin-top: 0.375rem;
+  }
+}
+
+.restaurant-dish {
+  display: flex;
+  align-items: center;
+  position: relative;
+  width:92%;
+  margin: auto;
+  margin-top: 0.825rem;
+  background: #fff;
+  border-radius: 1rem;
+  overflow: hidden;
+  @include shadow(0.1);
+
+  &:hover &__description {
+    width: calc(100% - 6.5rem);
+    transition: width 0.7s ease;
+  }
+
+  &:hover &__price {
+    transform: translateX(-3rem);
+    transition: transform 0.7s ease 0.1s;
+  }
+
+  &:hover &__check {
+    transform: translateX(-3.5rem);
+    transition: transform 0.8s ease;
+
+    & span {
+      transform: rotate(0deg);
+      transition: transform 0.4s ease 0.2s;
+    }
+  }
+
+  &__description {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 0.75rem 0.625rem;
+    width: calc(100% - 3rem);
+    transition: width 0.9s ease 0.4s;
+
+    & h3 {
+      font-size: 1.125rem;
+      font-weight: 500;
+      padding-bottom: 0.375rem;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
+
+    & p {
+      font-size: 0.927rem;
+      font-weight: 300;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
+  }
+
+  &__price {
+    position: absolute;
+    right: 0.5rem;
+    bottom: 0;
+    width: 2.5rem;
+    font-size: 0.925rem;
+    font-weight: 700;
+    padding-bottom: 0.75rem;
+    transform: translateX(0);
+    transition: transform 0.7s ease-in 0.1s;
+  }
+
+  &__check {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: -3.5rem;
+    width: 3.5rem;
+    background: $color-tertiary;
+    color: #fff;
+    @include flex-center;
+    transform: translateX(0);
+    transition: transform 0.8s ease-in;
+
+    & span {
+      transform: rotate(-180deg);
+      transition: transform 0.4s ease-in 0.2s;
+    }
+      
+  }
+}
+
+
+
+

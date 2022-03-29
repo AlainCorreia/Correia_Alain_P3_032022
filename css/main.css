@@ -15,17 +15,12 @@ body {
 }
 
 h1 {
-  font-size: 1.8rem;
+  font-size: 1.8125rem;
   font-weight: 500;
 }
 
 h2 {
   font-size: 1.5rem;
-  font-weight: 700;
-}
-
-h3 {
-  font-size: 1.125rem;
   font-weight: 700;
 }
 
@@ -122,13 +117,13 @@ h3 {
     transform: translateX(0);
   }
 }
-.home-header {
-  font-family: "Shrikhand", cursive;
+.header {
   display: flex;
   justify-content: center;
   align-items: center;
 }
-.home-header__title {
+.header__title {
+  font-family: "Shrikhand", cursive;
   margin: 1.1rem 0 0.675rem;
 }
 
@@ -382,6 +377,8 @@ h3 {
   align-items: center;
 }
 .card-restaurant__description h3 {
+  font-size: 1.125rem;
+  font-weight: 700;
   padding-left: 0.75rem;
   padding-bottom: 0.25rem;
 }
@@ -437,7 +434,7 @@ h3 {
     transform: scale(1);
   }
 }
-footer {
+.footer {
   background: #353535;
   padding-bottom: 1.5rem;
 }
