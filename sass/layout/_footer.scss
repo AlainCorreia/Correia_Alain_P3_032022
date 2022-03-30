@@ -4,7 +4,7 @@
 }
 
 .footer-nav {
-  padding-left: 7%;
+  padding-left: calc($section-margin + 0.375rem);
 
   & ul {
     list-style: none;

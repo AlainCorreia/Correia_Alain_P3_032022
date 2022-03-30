@@ -18,35 +18,4 @@
     font-weight: 300;
     padding-bottom: 1.9rem;
   }
-
-  &__btn {
-    position: relative;
-    background: linear-gradient(to bottom right, $color-secondary, $color-primary);
-    color: #FFF;
-    font-size: 0.965rem;
-    font-weight: 500;
-    padding: 1rem 1.5rem;
-    border-radius: 2rem;
-    @include shadow;
-    z-index: 1;
-
-    &:hover::after {
-      opacity: 1;
-    }
-
-    &::after {
-      content: "";
-      position: absolute;
-      top: 0;
-      right: 0;
-      bottom: 0;
-      left: 0;
-      border-radius: 2rem;
-      z-index: -1;
-      opacity: 0;
-      background: linear-gradient(to bottom right, lighten($color-secondary, 4), lighten($color-primary, 4));
-      @include shadow(0.15);
-      transition: opacity 150ms;
-    }
-  }
 }

@@ -40,7 +40,7 @@ h2 {
 }
 
 .footer-nav {
-  padding-left: 7%;
+  padding-left: calc(5% + 0.375rem);
 }
 .footer-nav ul {
   list-style: none;
@@ -67,6 +67,35 @@ h2 {
   padding-right: 1.25rem;
 }
 
+.btn {
+  position: relative;
+  background: linear-gradient(to bottom right, #FF79DA, #9356DC);
+  color: #FFF;
+  font-size: 0.97rem;
+  font-weight: 400;
+  padding: 1rem 1.5rem;
+  border-radius: 2rem;
+  box-shadow: 4px 4px 10px 0px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+}
+.btn:hover::after {
+  opacity: 1;
+}
+.btn::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  border-radius: 2rem;
+  z-index: -1;
+  opacity: 0;
+  background: linear-gradient(to bottom right, #ff8de0, #9e67e0);
+  box-shadow: 4px 4px 10px 0px rgba(0, 0, 0, 0.15);
+  transition: opacity 150ms;
+}
+
 .heart {
   display: flex;
   justify-content: center;
@@ -75,15 +104,7 @@ h2 {
   position: relative;
   font-size: 1.5rem;
 }
-.heart:hover > .heart-icon2 {
-  -webkit-animation: heart-animation 0.8s forwards;
-          animation: heart-animation 0.8s forwards;
-}
-.heart:hover > .heart-icon {
-  opacity: 0;
-  transition: opacity 0.2s 0.5s;
-}
-.heart .heart-icon2 {
+.heart__icon--full {
   position: absolute;
   background: linear-gradient(to top, #FF79DA, #9356DC);
   color: transparent;
@@ -95,6 +116,14 @@ h2 {
   left: 0;
   font-weight: 900;
   transform: scale(0);
+}
+.heart:hover .heart__icon {
+  opacity: 0;
+  transition: opacity 0.2s 0.5s;
+}
+.heart:hover .heart__icon--full {
+  -webkit-animation: heart-animation 0.8s forwards;
+          animation: heart-animation 0.8s forwards;
 }
 
 @-webkit-keyframes heart-animation {
@@ -137,25 +166,40 @@ h2 {
 }
 
 .restaurant-menu-container {
+  position: relative;
   background: #F6F6F6;
   border-radius: 2.5rem 2.5rem 0 0;
   margin-top: -3.25rem;
-  position: relative;
+  padding-bottom: 4rem;
+}
+.restaurant-menu-container__btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 3rem;
+}
+.restaurant-menu-container__btn .btn--lg {
+  padding: 1rem 3.125rem;
 }
 
 .restaurant-heading {
   width: 90%;
   margin: auto;
   display: flex;
-  justify-content: center;
-  align-items: center;
   justify-content: space-between;
+  align-items: baseline;
   padding-top: 2.25rem;
 }
 .restaurant-heading__name {
   font-family: "Shrikhand", cursive;
   font-size: 1.75rem;
   font-weight: 500;
+}
+.restaurant-heading__heart {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 5% 0 0;
 }
 
 .restaurant-course {
@@ -175,24 +219,54 @@ h2 {
   display: flex;
   align-items: center;
   position: relative;
-  width: 92%;
+  width: 93%;
   margin: auto;
   margin-top: 0.825rem;
   background: #fff;
   border-radius: 1rem;
   overflow: hidden;
   box-shadow: 4px 4px 10px 0px rgba(0, 0, 0, 0.1);
+  -webkit-animation: dish-animation 0.8s ease-out both 0.2s;
+          animation: dish-animation 0.8s ease-out both 0.2s;
+}
+.restaurant-dish--delay1 {
+  -webkit-animation-delay: 0.35s;
+          animation-delay: 0.35s;
+}
+.restaurant-dish--delay2 {
+  -webkit-animation-delay: 0.5s;
+          animation-delay: 0.5s;
+}
+.restaurant-dish--delay3 {
+  -webkit-animation-delay: 0.65s;
+          animation-delay: 0.65s;
+}
+.restaurant-dish--delay4 {
+  -webkit-animation-delay: 0.8s;
+          animation-delay: 0.8s;
+}
+.restaurant-dish--delay5 {
+  -webkit-animation-delay: 0.95s;
+          animation-delay: 0.95s;
+}
+.restaurant-dish--delay6 {
+  -webkit-animation-delay: 1.1s;
+          animation-delay: 1.1s;
+}
+.restaurant-dish--delay7 {
+  -webkit-animation-delay: 1.25s;
+          animation-delay: 1.25s;
 }
 .restaurant-dish:hover .restaurant-dish__description {
-  width: calc(100% - 6.5rem);
-  transition: width 0.7s ease;
+  width: calc(100% - 6.75rem);
+  transition: width 0.7s linear;
 }
 .restaurant-dish:hover .restaurant-dish__price {
   transform: translateX(-3rem);
   transition: transform 0.7s ease 0.1s;
 }
 .restaurant-dish:hover .restaurant-dish__check {
-  transform: translateX(-3.5rem);
+  transform: translateX(-3.75rem);
   transition: transform 0.8s ease;
 }
 .restaurant-dish:hover .restaurant-dish__check span {
@@ -203,9 +277,9 @@ h2 {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  padding: 0.75rem 0.625rem;
+  padding: 0.75rem 1.25rem 0.75rem 0.625rem;
   width: calc(100% - 3rem);
-  transition: width 0.9s ease 0.4s;
+  transition: width 0.6s linear 0.2s;
 }
 .restaurant-dish__description h3 {
   font-size: 1.125rem;
@@ -224,30 +298,52 @@ h2 {
 }
 .restaurant-dish__price {
   position: absolute;
-  right: 0.5rem;
+  right: 0;
   bottom: 0;
-  width: 2.5rem;
+  width: 3rem;
   font-size: 0.925rem;
   font-weight: 700;
   padding-bottom: 0.75rem;
   transform: translateX(0);
-  transition: transform 0.7s ease-in 0.1s;
+  transition: transform 0.6s ease-in 0.1s;
 }
 .restaurant-dish__check {
   position: absolute;
   top: 0;
   bottom: 0;
-  right: -3.5rem;
-  width: 3.5rem;
+  right: -3.75rem;
+  width: 3.75rem;
   background: #99E2D0;
   color: #fff;
   display: flex;
   justify-content: center;
   align-items: center;
   transform: translateX(0);
-  transition: transform 0.8s ease-in;
+  transition: transform 0.6s ease-in;
 }
 .restaurant-dish__check span {
   transform: rotate(-180deg);
-  transition: transform 0.4s ease-in 0.2s;
+  transition: transform 0.4s ease-in 0.1s;
+}
+
+@-webkit-keyframes dish-animation {
+  0% {
+    opacity: 0;
+    transform: translateY(1.5rem);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes dish-animation {
+  0% {
+    opacity: 0;
+    transform: translateY(1.5rem);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }/*# sourceMappingURL=page.css.map */

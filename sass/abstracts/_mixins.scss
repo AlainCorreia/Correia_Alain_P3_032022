@@ -22,6 +22,12 @@
   align-items: center;
 }
 
+@mixin ellipsis {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
 @mixin mobile-large {
   @media screen and (min-width: map-get($breakpoints, mobile-large)) {
     @content;
