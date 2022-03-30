@@ -21,6 +21,9 @@
   justify-content: space-between;
   align-items: baseline;
   padding-top: 2.25rem;
+  @include desktop {
+    width: 92%;
+  }
 
   &__name {
     font-family: $font-secondary;
@@ -29,8 +32,28 @@
   }
 
   &__heart {
-    @include flex-center;
-    margin: 0 5% 0 0;
+    margin-right: 0.5rem;
+  }
+}
+
+.menu-wrapper {
+  @include tablet {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+  }
+
+  &__course {
+    @include tablet {
+      width: 50%;
+    }
+  }
+
+  &__button {
+    @include tablet {
+      width: 50%;
+      @include flex-center;
+    }
   }
 }
 
@@ -56,6 +79,7 @@
   margin-top: 0.825rem;
   background: #fff;
   border-radius: 1rem;
+  cursor: pointer;
   overflow: hidden;
   @include shadow(0.1);
   animation: dish-animation 0.8s ease-out both $dish-delay;

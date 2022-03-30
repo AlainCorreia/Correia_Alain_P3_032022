@@ -42,6 +42,16 @@ h2 {
 .footer-nav {
   padding-left: calc(5% + 0.375rem);
 }
+@media screen and (min-width: 768px) {
+  .footer-nav {
+    padding-left: 3.5%;
+  }
+}
+@media screen and (min-width: 992px) {
+  .footer-nav {
+    padding-left: 2.5%;
+  }
+}
 .footer-nav ul {
   list-style: none;
 }
@@ -100,9 +110,9 @@ h2 {
   display: flex;
   justify-content: center;
   align-items: center;
-  margin: 0 1.25rem 0.5rem 0;
   position: relative;
   font-size: 1.5rem;
+  cursor: pointer;
 }
 .heart__icon--full {
   position: absolute;
@@ -152,9 +162,39 @@ h2 {
   justify-content: center;
   align-items: center;
 }
+@media screen and (min-width: 768px) {
+  .home-link {
+    left: 3.5%;
+  }
+}
+@media screen and (min-width: 992px) {
+  .home-link {
+    left: 2.5%;
+  }
+}
 
 .restaurant-image {
   height: 17rem;
+}
+@media screen and (min-width: 410px) {
+  .restaurant-image {
+    height: 18rem;
+  }
+}
+@media screen and (min-width: 540px) {
+  .restaurant-image {
+    height: 20rem;
+  }
+}
+@media screen and (min-width: 768px) {
+  .restaurant-image {
+    height: 22rem;
+  }
+}
+@media screen and (min-width: 992px) {
+  .restaurant-image {
+    height: 24rem;
+  }
 }
 .restaurant-image img {
   width: 100%;
@@ -163,6 +203,12 @@ h2 {
      object-fit: cover;
   -o-object-position: top;
      object-position: top;
+}
+@media screen and (min-width: 540px) {
+  .restaurant-image img {
+    -o-object-position: center;
+       object-position: center;
+  }
 }
 
 .restaurant-menu-container {
@@ -190,16 +236,39 @@ h2 {
   align-items: baseline;
   padding-top: 2.25rem;
 }
+@media screen and (min-width: 992px) {
+  .restaurant-heading {
+    width: 92%;
+  }
+}
 .restaurant-heading__name {
   font-family: "Shrikhand", cursive;
   font-size: 1.75rem;
   font-weight: 500;
 }
 .restaurant-heading__heart {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin: 0 5% 0 0;
+  margin-right: 0.5rem;
+}
+
+@media screen and (min-width: 768px) {
+  .menu-wrapper {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+  }
+}
+@media screen and (min-width: 768px) {
+  .menu-wrapper__course {
+    width: 50%;
+  }
+}
+@media screen and (min-width: 768px) {
+  .menu-wrapper__button {
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
 }
 
 .restaurant-course {
@@ -224,6 +293,7 @@ h2 {
   margin-top: 0.825rem;
   background: #fff;
   border-radius: 1rem;
+  cursor: pointer;
   overflow: hidden;
   box-shadow: 4px 4px 10px 0px rgba(0, 0, 0, 0.1);
   -webkit-animation: dish-animation 0.8s ease-out both 0.2s;
