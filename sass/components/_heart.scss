@@ -5,14 +5,10 @@
   cursor: pointer;
 
   &__icon--full {
-    position: absolute;
+    @include overlap;
     background: linear-gradient(to top, $color-secondary, $color-primary);
     color: transparent;
     background-clip: text;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
     font-weight: 900;
     transform: scale(0);
   }

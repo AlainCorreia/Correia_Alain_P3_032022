@@ -21,9 +21,6 @@
   justify-content: space-between;
   align-items: baseline;
   padding-top: 2.25rem;
-  @include desktop {
-    width: 92%;
-  }
 
   &__name {
     font-family: $font-secondary;
@@ -74,7 +71,7 @@
   display: flex;
   align-items: center;
   position: relative;
-  width: calc($section-width + 3%);
+  width: calc($section-width + 0.75rem);
   margin: auto;
   margin-top: 0.825rem;
   background: #fff;
@@ -83,6 +80,7 @@
   overflow: hidden;
   @include shadow(0.1);
   animation: dish-animation 0.8s ease-out both $dish-delay;
+  
   @for $i from 1 through $num-dish-delay {
     &--delay#{$i} {
       animation-delay: $dish-delay + 0.15s * $i;
@@ -173,7 +171,3 @@
     transform: translateY(0);
   }
 }
-
-
-
-

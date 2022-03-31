@@ -1,15 +1,7 @@
 .home-link {
   position: absolute;
-  left: $section-margin;
+  left: calc($section-margin + 0.25rem);
   font-size: 1.125rem;
   height: 1.8125rem;
   @include flex-center;
-
-  @include tablet {
-    left: 3.5%;
-  }
-
-  @include desktop {
-    left: 2.5%;
-  }
 }

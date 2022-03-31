@@ -11,6 +11,7 @@
   display: flex;
   flex-direction: column;
   @include section-margin;
+
   @include tablet {
     flex-direction: row;
     justify-content: space-between;
@@ -25,18 +26,15 @@
   margin-bottom: 1.25rem;
   z-index: 1;
   @include shadow(0.1);
+
   @include tablet {
-    width: 47.5%;
+    width: calc(50% - $section-margin * 0.5);
     margin-bottom: 1.5rem;
   }
 
   &::after {
     content: "";
-    position: absolute;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
+    @include overlap;
     border-radius: 1rem;
     z-index: -1;
     opacity: 0;
@@ -57,14 +55,21 @@
     border-radius: 1rem 1rem 0 0;
     overflow: hidden;
     position: relative;
+
     @include mobile-large {
       height: 12rem;
     }
+
     @include tablet {
       height: 13rem;
     }
-    @include desktop {
+
+    @include tablet {
       height: 14rem;
+    }
+
+    @include desktop {
+      height: 15rem;
     }
 
     & img {
@@ -72,12 +77,13 @@
       height: 100%;
       object-fit: cover;
       object-position: bottom;
+
       @include mobile-large {
         object-position: center;
       }
     }
 
-    &--position img {
+    &--portrait img {
       object-position: 50% 61%;
     }
 
@@ -91,7 +97,7 @@
       font-weight: 500;
       border-radius: 0.1rem;
       padding: 0.375rem 0.725rem;
-      line-height: normal;  //Overrides normalize.css to center text on Chrome 
+      line-height: normal; //Overrides normalize.css to center text on Chrome 
     }
   }
 

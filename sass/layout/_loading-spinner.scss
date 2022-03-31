@@ -29,7 +29,7 @@
     font-family: $font-secondary;
     font-size: 1.25rem;
     animation: move-to-center 0.7s ease;
-    line-height: normal;  //Prevents small shift on Firefox at the end of the animation
+    line-height: normal; //Prevents small shift on Firefox at the end of the animation
   }
 }
 

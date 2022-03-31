@@ -6,15 +6,15 @@
   }
 
   @include tablet-small {
-    height: 20rem;
+    height: 21rem;
   }
 
   @include tablet {
-    height: 22rem;
+    height: 24rem;
   }
 
   @include desktop {
-    height: 24rem;
+    height: 26rem;
   }
 
   & img {
@@ -26,5 +26,9 @@
     @include tablet-small {
       object-position: center;
     }
+  }
+
+  &--portrait img {
+    object-position: center;
   }
 }
