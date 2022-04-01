@@ -18,6 +18,11 @@ a {
   text-decoration: none;
 }
 
+ul,
+ol {
+  list-style: none;
+}
+
 body {
   font-family: "Roboto", sans-serif;
 }
@@ -51,9 +56,6 @@ h2 {
 
 .footer-nav {
   padding-left: 1.625rem;
-}
-.footer-nav ul {
-  list-style: none;
 }
 .footer-nav__heading {
   font-family: "Shrikhand", cursive;

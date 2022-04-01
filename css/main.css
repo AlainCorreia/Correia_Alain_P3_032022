@@ -18,6 +18,11 @@ a {
   text-decoration: none;
 }
 
+ul,
+ol {
+  list-style: none;
+}
+
 body {
   font-family: "Roboto", sans-serif;
 }
@@ -211,7 +216,8 @@ h2 {
   margin-left: 0.75rem;
   margin-bottom: 1.5rem;
   background: #F6F6F6;
-  border-radius: 1.5em;
+  border-radius: 1.5rem;
+  z-index: 1;
   box-shadow: 4px 4px 10px 0px rgba(0, 0, 0, 0.2);
 }
 @media screen and (min-width: 992px) {
@@ -219,13 +225,32 @@ h2 {
     width: calc(33% - 1.25rem);
   }
 }
-.instructions--light-purple {
+.instructions::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  border-radius: 1.5rem;
+  z-index: -1;
+  opacity: 0;
   background: #f2eafb;
+  transition: opacity;
+}
+.instructions:hover::after {
+  opacity: 1;
+}
+.instructions:hover .instructions__description-icon--grey {
+  opacity: 0;
+}
+.instructions:hover .instructions__description-icon--purple {
+  opacity: 1;
 }
 .instructions__description {
-  display: flex;
-  align-items: baseline;
   position: absolute;
+  display: flex;
+  align-items: center;
   font-size: 1em;
   font-weight: 500;
   top: 1.55rem;
@@ -245,12 +270,25 @@ h2 {
   margin-right: 1.25rem;
 }
 .instructions__description-icon {
-  opacity: 0.5;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
   margin-right: 1.5rem;
 }
+.instructions__description-icon--grey {
+  opacity: 0.5;
+  transition: opacity;
+}
 .instructions__description-icon--purple {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
   color: #9356DC;
-  opacity: 1;
+  opacity: 0;
+  transition: opacity;
 }
 
 .restaurants-container {
@@ -393,9 +431,6 @@ h2 {
 
 .footer-nav {
   padding-left: 1.625rem;
-}
-.footer-nav ul {
-  list-style: none;
 }
 .footer-nav__heading {
   font-family: "Shrikhand", cursive;

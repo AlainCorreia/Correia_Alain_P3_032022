@@ -31,21 +31,40 @@
   margin-left: $instructions-num-size * 0.5;
   margin-bottom: 1.5rem;
   background: $color-background;
-  border-radius: 1.5em;
+  border-radius: 1.5rem;
+  z-index: 1;
   @include shadow;
 
   @include desktop {
     width: calc(33% - $section-margin);
   }
 
-  &--light-purple {
+  &::after {
+    content: "";
+    @include overlap;
+    border-radius: 1.5rem;
+    z-index: -1;
+    opacity: 0;
     background: lighten($color-primary, 35);
+    transition: opacity;
+  }
+
+  &:hover::after {
+    opacity: 1;
+  }
+
+  &:hover &__description-icon--grey {
+    opacity: 0;
+  }
+
+  &:hover &__description-icon--purple {
+    opacity: 1;
   }
 
   &__description {
-    display: flex;
-    align-items: baseline;
     position: absolute;
+    display: flex;
+    align-items: center;
     font-size: 1em;
     font-weight: 500;
     top: $instructions-height * 0.5 - $instructions-num-size * 0.5;
@@ -65,12 +84,20 @@
   }
 
   &__description-icon {
-    opacity: 0.5;
+    @include flex-center;
+    position: relative;
     margin-right: 1.5rem;
 
+    &--grey {
+      opacity: 0.5;
+      transition: opacity;
+    }
+
     &--purple {
+      @include overlap;
       color: $color-primary;
-      opacity: 1;
+      opacity: 0;
+      transition: opacity;
     }
   }
 }
