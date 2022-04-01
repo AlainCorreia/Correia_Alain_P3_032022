@@ -14,28 +14,32 @@
 </head>
 
 <body>
-
+  <!-- Header -->
   <header class="header">
     <h1 class="header__title">ohmyfood</h1>
   </header>
 
   <main>
 
+    <!-- Loading spinner -->
     <div class="loading-overlay">
       <div class="loading-overlay__spinner"></div>
       <div class="loading-overlay__logo">ohmyfood</div>
     </div>
 
+    <!-- Location -->
     <div class="location">
       <div class="location__name"><i class="fas fa-map-marker-alt location-icon"></i>Paris, Belleville</div>
     </div>
 
+    <!-- Presentation -->
     <section class="presentation">
       <h2 class="presentation__title">Réservez le menu qui vous convient</h2>
       <p class="presentation__description">Découvrez des restaurants d'exception, sélectionnés par nos soins.</p>
       <a href="#restaurants" class="btn">Explorer nos restaurants</a>
     </section>
 
+    <!-- Instructions -->
     <section class="instructions-container">
       <h2 class="instructions-container__title">Fonctionnement</h2>
       <div class="instructions-wrapper">
@@ -61,11 +65,16 @@
       </div>
     </section>
 
+    <!-- Restaurants -->
     <section id="restaurants" class="restaurants-container">
       <h2 class="restaurants-container__title">Restaurants</h2>
 
+      <!-- Needed for responsive layout -->
       <div class="restaurant-wrapper">
 
+        <!-- Restaurant cards -->
+
+        <!-- La palette du goût -->
         <section class="card-restaurant">
           <a href="./html/la-palette-du-gout.html">
             <div class="card-restaurant__image">
@@ -84,6 +93,7 @@
           </a>
         </section>
 
+        <!-- La note enchantée -->
         <section class="card-restaurant">
           <a href="./html/la-note-enchantee.html">
             <div class="card-restaurant__image card-restaurant__image--portrait">
@@ -102,6 +112,7 @@
           </a>
         </section>
 
+        <!-- À la française -->
         <section class="card-restaurant">
           <a href="./html/a-la-française.html">
             <div class="card-restaurant__image">
@@ -119,6 +130,7 @@
           </a>
         </section>
 
+        <!-- Le délice des sens -->
         <section class="card-restaurant">
           <a href="./html/le-delice-des-sens.html">
             <div class="card-restaurant__image">
@@ -143,6 +155,7 @@
 
   </main>
 
+  <!-- Footer -->
   <footer class="footer">
     <nav class="footer-nav">
       <ul>

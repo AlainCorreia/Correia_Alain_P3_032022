@@ -1,5 +1,7 @@
 .header {
+  position: relative;
   @include flex-center;
+  background: #fff;
 
   &__title {
     font-family: $font-secondary;

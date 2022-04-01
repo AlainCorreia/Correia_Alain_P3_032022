@@ -1,5 +1,6 @@
 .instructions-container {
   @include section-padding;
+  background: #fff;
 
   &__title {
     @include title;

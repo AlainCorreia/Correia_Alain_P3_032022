@@ -7,6 +7,12 @@
   box-sizing: border-box;
 }
 
+body {
+  max-width: 1440px;
+  margin: auto;
+  background: #d7d7d7;
+}
+
 a {
   color: #000;
   text-decoration: none;
@@ -27,9 +33,11 @@ h2 {
 }
 
 .header {
+  position: relative;
   display: flex;
   justify-content: center;
   align-items: center;
+  background: #fff;
 }
 .header__title {
   font-family: "Shrikhand", cursive;
@@ -224,11 +232,11 @@ h2 {
 }
 .restaurant-heading__name {
   font-family: "Shrikhand", cursive;
-  font-size: 1.75rem;
+  font-size: 1.67rem;
   font-weight: 500;
 }
 .restaurant-heading__heart {
-  margin-right: 0.5rem;
+  margin-right: 1.25rem;
 }
 
 @media screen and (min-width: 768px) {

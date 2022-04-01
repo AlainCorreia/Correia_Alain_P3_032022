@@ -7,6 +7,12 @@
   box-sizing: border-box;
 }
 
+body {
+  max-width: 1440px;
+  margin: auto;
+  background: darken($color-background, 12);
+}
+
 // Basic style for links
 a {
   color: #000;

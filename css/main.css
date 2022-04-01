@@ -7,6 +7,12 @@
   box-sizing: border-box;
 }
 
+body {
+  max-width: 1440px;
+  margin: auto;
+  background: #d7d7d7;
+}
+
 a {
   color: #000;
   text-decoration: none;
@@ -27,10 +33,11 @@ h2 {
 }
 
 .loading-overlay {
-  width: 100vw;
-  height: 100vh;
+  width: 100%;
+  height: 100%;
   position: fixed;
   top: 0;
+  left: 0;
   z-index: 10;
   background: #FFF;
   -webkit-animation: hide 2s forwards;
@@ -38,7 +45,7 @@ h2 {
 }
 .loading-overlay__spinner {
   position: absolute;
-  top: calc(50% - 2rem);
+  top: calc(50% - 4rem);
   left: calc(50% - 2rem);
   width: 4rem;
   height: 4rem;
@@ -47,19 +54,18 @@ h2 {
   border-bottom: 0.5rem #FF79DA solid;
   border-left: 0.5rem #99E2D0 solid;
   border-radius: 50%;
-  -webkit-animation: spin 0.6s 3 linear;
-          animation: spin 0.6s 3 linear;
+  -webkit-animation: spin 0.6s 5 linear;
+          animation: spin 0.6s 5 linear;
 }
 .loading-overlay__logo {
   position: absolute;
-  top: calc(50% + 4rem);
+  top: calc(50% + 2rem);
   width: 100%;
   text-align: center;
   font-family: "Shrikhand", cursive;
   font-size: 1.25rem;
-  -webkit-animation: move-to-center 0.7s ease;
-          animation: move-to-center 0.7s ease;
-  line-height: normal;
+  -webkit-animation: move-to-center 0.7s ease both;
+          animation: move-to-center 0.7s ease both;
 }
 
 @-webkit-keyframes hide {
@@ -120,9 +126,11 @@ h2 {
   }
 }
 .header {
+  position: relative;
   display: flex;
   justify-content: center;
   align-items: center;
+  background: #fff;
 }
 .header__title {
   font-family: "Shrikhand", cursive;
@@ -168,6 +176,7 @@ h2 {
 
 .instructions-container {
   padding: 3rem 0;
+  background: #fff;
 }
 .instructions-container__title {
   width: calc(100% - 2.5rem);
