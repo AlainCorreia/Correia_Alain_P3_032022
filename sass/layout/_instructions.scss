@@ -1,3 +1,5 @@
+// Fonctionnement
+
 .instructions-container {
   @include section-padding;
   background: #fff;
@@ -13,40 +15,42 @@
   align-items: center;
   @include section-margin;
 
+  //Media queries
   @include tablet-small {
     width: 30rem;
   }
 
   @include desktop {
     @include section-margin;
-    flex-direction: row;
+    flex-direction: row; // Make the instructions lay out in row instead of column
     justify-content: space-between;
   }
 }
 
 .instructions {
-  position: relative;
-  width: calc(100% - $instructions-num-size * 0.5);
+  position: relative; // To position pseudo-element
+  width: calc(100% - $instructions-num-size * 0.5); // Compensate for the number disc shift 
   height: $instructions-height;
-  margin-left: $instructions-num-size * 0.5;
+  margin-left: $instructions-num-size * 0.5; //Center the block
   margin-bottom: 1.5rem;
   background: $color-background;
   border-radius: 1.5rem;
   z-index: 1;
   @include shadow;
 
+  // Media queries
   @include desktop {
-    width: calc(33% - $section-margin);
+    width: calc(33% - $section-margin); // From full width to a third
   }
 
+  // Pseudo-element to change opacity instead of background
   &::after {
     content: "";
-    @include overlap;
+    @include cover; // Position in parent element
     border-radius: 1.5rem;
     z-index: -1;
     opacity: 0;
     background: lighten($color-primary, 35);
-    transition: opacity;
   }
 
   &:hover::after {
@@ -65,15 +69,15 @@
     position: absolute;
     display: flex;
     align-items: center;
-    font-size: 1em;
+    font-size: 1rem;
     font-weight: 500;
-    top: $instructions-height * 0.5 - $instructions-num-size * 0.5;
-    left: $instructions-num-size * -0.5;
+    top: $instructions-height * 0.5 - $instructions-num-size * 0.5; // Center vertically
+    left: $instructions-num-size * -0.5; // Move to the left half the size of the number disc
   }
 
   &__description-number {
     @include flex-center;
-    font-size: 0.825em;
+    font-size: 0.825rem;
     font-weight: 400;
     color: #fff;
     background: $color-primary;
@@ -85,19 +89,18 @@
 
   &__description-icon {
     @include flex-center;
-    position: relative;
+    position: relative; // To position purple icon
     margin-right: 1.5rem;
 
     &--grey {
       opacity: 0.5;
-      transition: opacity;
     }
 
+    // Purple icon to change opacity instead of color
     &--purple {
-      @include overlap;
+      @include cover; // Position in parent element
       color: $color-primary;
       opacity: 0;
-      transition: opacity;
     }
   }
 }

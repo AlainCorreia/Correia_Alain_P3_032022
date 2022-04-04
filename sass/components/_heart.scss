@@ -1,28 +1,32 @@
+// Heart component
+
 .heart {
   @include flex-center;
-  position: relative;
+  position: relative; // To position full heart icon
   font-size: 1.5rem;
   cursor: pointer;
 
+  // Full heart icon to animate opacity instead of background
   &__icon--full {
-    @include overlap;
+    @include cover; // To position in parent element
     background: linear-gradient(to top, $color-secondary, $color-primary);
-    color: transparent;
-    background-clip: text;
-    font-weight: 900;
+    color: transparent; // Show background
+    background-clip: text; // Clip background around the icon
+    font-weight: 900; // Make the heart icon full 
     transform: scale(0);
   }
 
   &:hover &__icon {
     opacity: 0;
-    transition: opacity 0.2s 0.5s;
+    transition: opacity 0.2s 0.4s; // Make the first heart disappear at the end of the heart-animation
   }
 
   &:hover &__icon--full {
-    animation: heart-animation 0.8s forwards;
+    animation: heart-animation 0.7s forwards; // Animation properties
   }
 }
 
+// Keyframes for animation of full heart size
 @keyframes heart-animation {
   0% {
     transform: scale(0.1);

@@ -1,5 +1,7 @@
+// Header
+
 .header {
-  position: relative;
+  position: relative; // To position back to homepage link on restaurant pages
   @include flex-center;
   background: #fff;
 

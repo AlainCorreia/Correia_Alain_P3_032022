@@ -1,3 +1,5 @@
+// Loading spinner
+
 .loading-overlay {
   width: 100%;
   height: 100%;
@@ -10,8 +12,8 @@
 
   &__spinner {
     position: absolute;
-    top: calc(50% - $spinner-size);
-    left: calc(50% - $spinner-size * 0.5);
+    top: calc(50% - $spinner-size); // Position vertically
+    left: calc(50% - $spinner-size * 0.5); // Center horizontally
     width: $spinner-size;
     height: $spinner-size;
     border-top: $spinner-border transparent solid;
@@ -19,20 +21,21 @@
     border-bottom: $spinner-border #FF79DA solid;
     border-left: $spinner-border #99E2D0 solid;
     border-radius: 50%;
-    animation: spin 0.6s 5 linear;
+    animation: spin 0.6s infinite linear;
   }
 
   &__logo {
     position: absolute;
-    top: calc(50% + $spinner-size * 0.5);
+    top: calc(50% + $spinner-size * 0.5); // Position vertically
     width: 100%;
-    text-align: center;
+    text-align: center; // Center horizontally
     font-family: $font-secondary;
     font-size: 1.25rem;
     animation: move-to-center 0.7s ease both;
   }
 }
 
+// Hide overlay animation keyframes
 @keyframes hide {
   0% {
     visibility: visible;
@@ -48,6 +51,7 @@
   }
 }
 
+// Spinner animation keyframes
 @keyframes spin {
   0% {
     transform: rotate(0deg);
@@ -58,6 +62,7 @@
   }
 }
 
+// Logo animation keyframes
 @keyframes move-to-center {
   0% {
     transform: translateX(100%);

@@ -1,6 +1,7 @@
 .restaurant-image {
   height: 17rem;
 
+  // Media queries - Make images taller on larger screens
   @include mobile-large {
     height: 18rem;
   }
@@ -23,11 +24,13 @@
     object-fit: cover;
     object-position: top;
 
+    // Media queries - Center images on larger screens
     @include tablet-small {
       object-position: center;
     }
   }
 
+  // Change position of portrait orientated image
   &--portrait img {
     object-position: center;
   }

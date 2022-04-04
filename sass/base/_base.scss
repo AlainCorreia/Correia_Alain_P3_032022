@@ -7,6 +7,7 @@
   box-sizing: border-box;
 }
 
+// Set site max-width
 body {
   max-width: 1440px;
   margin: auto;
@@ -19,6 +20,7 @@ a {
   text-decoration: none;
 }
 
+// Basic style for lists
 ul,
 ol {
   list-style: none;

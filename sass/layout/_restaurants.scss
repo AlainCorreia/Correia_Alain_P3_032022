@@ -7,12 +7,13 @@
   }
 }
 
-// Set restaurant cards layout
+// Set restaurant cards section layout
 .restaurant-wrapper {
   display: flex;
   flex-direction: column;
   @include section-margin;
 
+  // Media queries
   @include tablet {
     flex-direction: row;
     justify-content: space-between;
@@ -21,26 +22,28 @@
 }
 
 .card-restaurant {
-  position: relative;
+  position: relative;  // To position pseudo-element
   background: #fff;
   border-radius: 1rem;
   margin-bottom: 1.25rem;
   z-index: 1;
   @include shadow(0.1);
 
+  // Media queries - Two columns of cards on tablet and desktop
   @include tablet {
     width: calc(50% - $section-margin * 0.5);
     margin-bottom: 1.5rem;
   }
 
+  // Pseudo-element to animate opacity instead of box-shadow
   &::after {
     content: "";
-    @include overlap;
+    @include cover;  // Position in parent element
     border-radius: 1rem;
     z-index: -1;
     opacity: 0;
     @include shadow(0.3);
-    transition: opacity 150ms;
+    transition: opacity 0.15s;
   }
 
   &:hover::after {
@@ -57,6 +60,7 @@
     overflow: hidden;
     position: relative;
 
+    // Media queries - Make images taller on larger screens
     @include mobile-large {
       height: 12rem;
     }
@@ -79,15 +83,17 @@
       object-fit: cover;
       object-position: bottom;
 
+      // Media queries - Center images on larger screens
       @include mobile-large {
         object-position: center;
       }
     }
 
     &--portrait img {
-      object-position: 50% 61%;
+      object-position: 50% 61%;  // Change position of portrait orientated image
     }
 
+    // Style and position "Nouveau"
     &--new {
       position: absolute;
       top: 0.75rem;
@@ -98,7 +104,7 @@
       font-weight: 500;
       border-radius: 0.1rem;
       padding: 0.375rem 0.725rem;
-      line-height: normal; //Override normalize.css to center text on Chrome 
+      line-height: normal; // Override normalize.css to center text on Chrome 
     }
   }
 

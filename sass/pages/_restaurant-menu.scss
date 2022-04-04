@@ -1,14 +1,17 @@
+// Menu section
+
 .restaurant-menu-container {
-  position: relative;
+  position: relative; // Make the section overlap //
+  margin-top: -3.25rem; // the restaurant image     //
   background: $color-background;
   border-radius: 2.5rem 2.5rem 0 0;
-  margin-top: -3.25rem;
   padding-bottom: 4rem;
 
   &__btn {
     @include flex-center;
     margin-top: 3rem;
 
+    // Make the button component narrower
     & .btn--lg {
       padding: 1rem 3.125rem;
     }
@@ -34,6 +37,8 @@
 }
 
 .menu-wrapper {
+
+  // Media queries - Change courses and order button layout on tablet and desktop
   @include tablet {
     display: flex;
     justify-content: space-between;
@@ -60,13 +65,14 @@
   font-weight: 300;
   margin-top: 2.25rem;
 
-  &__separator {
+  &__divider {
     width: 2.5rem;
     border-top: 3px solid $color-tertiary;
     margin-top: 0.375rem;
   }
 }
 
+// Dish block and its animations
 .restaurant-dish {
   display: flex;
   align-items: center;
@@ -79,8 +85,9 @@
   cursor: pointer;
   overflow: hidden;
   @include shadow(0.1);
-  animation: dish-animation 0.8s ease-out both $dish-delay;
-  
+  animation: dish-animation 0.8s ease-out both $dish-delay; // Animation properties
+
+  // Generate selectors and rules for incremental animation delays
   @for $i from 1 through $num-dish-delay {
     &--delay#{$i} {
       animation-delay: $dish-delay + 0.15s * $i;
@@ -88,22 +95,18 @@
   }
 
   &:hover &__description {
-    width: calc(100% - ($price-width + $check-width));
-    transition: width 0.7s linear;
+    width: calc(100% - ($price-width + $check-width)); // Reduce block width to make the text overflow
   }
 
   &:hover &__price {
-    transform: translateX(-$price-width);
-    transition: transform 0.7s ease 0.1s;
+    transform: translateX(-$price-width); // Move to the left
   }
 
   &:hover &__check {
-    transform: translateX(-$check-width);
-    transition: transform 0.8s ease;
+    transform: translateX(-$check-width); // Move to the left
 
     & span {
-      transform: rotate(0deg);
-      transition: transform 0.4s ease 0.2s;
+      transform: rotate(0deg); // Rotate the check mark
     }
   }
 
@@ -112,20 +115,20 @@
     flex-direction: column;
     justify-content: space-between;
     padding: 0.75rem 1.25rem 0.75rem 0.625rem;
-    width: calc(100% - $price-width);
-    transition: width 0.6s linear 0.2s;
+    width: calc(100% - $price-width); // Initial block width
+    transition: width 0.6s linear; // Transition properties
 
     & h3 {
       font-size: 1.125rem;
       font-weight: 500;
       padding-bottom: 0.375rem;
-      @include ellipsis;
+      @include ellipsis; // Manage text overflow
     }
 
     & p {
       font-size: 0.927rem;
       font-weight: 300;
-      @include ellipsis;
+      @include ellipsis; // Manage text overflow
     }
   }
 
@@ -137,29 +140,31 @@
     font-size: 0.925rem;
     font-weight: 700;
     padding-bottom: 0.75rem;
-    transform: translateX(0);
-    transition: transform 0.6s ease-in 0.1s;
+    transform: translateX(0); // Initial position
+    transition: transform 0.6s ease 0.1s; // Transition properties
+
   }
 
   &__check {
     position: absolute;
     top: 0;
     bottom: 0;
-    right: -$check-width;
+    right: -$check-width; // Position the block outside of its parent
     width: $check-width;
     background: $color-tertiary;
     color: #fff;
     @include flex-center;
-    transform: translateX(0);
-    transition: transform 0.6s ease-in;
+    transform: translateX(0); // Initial position
+    transition: transform 0.7s ease; // Transition properties
 
     & span {
-      transform: rotate(-180deg);
-      transition: transform 0.4s ease-in 0.1s;
+      transform: rotate(-180deg); // Initial rotation
+      transition: transform 0.3s ease-in 0.1s; // Transition properties
     }
   }
 }
 
+// Animation of dish blocks appearance keyframes
 @keyframes dish-animation {
   0% {
     opacity: 0;
