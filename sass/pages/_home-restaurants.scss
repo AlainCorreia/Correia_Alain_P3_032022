@@ -55,26 +55,26 @@
   }
 
   &__image {
-    height: 11rem;
-    border-radius: 1rem 1rem 0 0;
+    height: 176px;
+    border-radius: 16px 16px 0 0;
     overflow: hidden;
     position: relative;
 
     // Media queries - Make images taller on larger screens
     @include mobile-large {
-      height: 12rem;
+      height: 192px;
     }
 
     @include tablet {
-      height: 13rem;
+      height: 208px;
     }
 
     @include tablet {
-      height: 14rem;
+      height: 224px;
     }
 
     @include desktop {
-      height: 15rem;
+      height: 240px;
     }
 
     & img {

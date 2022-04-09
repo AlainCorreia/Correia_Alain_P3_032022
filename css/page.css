@@ -218,48 +218,6 @@ h2 {
   font-weight: 700;
 }
 
-.header {
-  position: relative;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background: #fff;
-}
-.header__title {
-  font-family: "Shrikhand", cursive;
-  margin: 1.1rem 0 0.675rem;
-}
-
-.footer {
-  background: #353535;
-  padding-bottom: 1.5rem;
-}
-
-.footer-nav {
-  padding-left: 1.625rem;
-}
-.footer-nav__heading {
-  font-family: "Shrikhand", cursive;
-  font-size: 1.125rem;
-  color: #FFF;
-  padding: 1.625rem 0 1.25rem;
-}
-.footer-nav__link {
-  padding-bottom: 0.5rem;
-}
-.footer-nav__link a {
-  font-size: 0.965rem;
-  color: #FFF;
-}
-.footer-nav__link .flatware-icon {
-  font-size: 0.75rem;
-  padding-right: 1.25rem;
-}
-.footer-nav__link .handshake-icon {
-  font-size: 0.625rem;
-  padding-right: 1.25rem;
-}
-
 .btn {
   position: relative;
   background: linear-gradient(to bottom right, #FF79DA, #9356DC);
@@ -268,7 +226,7 @@ h2 {
   font-weight: 400;
   padding: 1rem 1.5rem;
   border-radius: 2rem;
-  box-shadow: 4px 4px 10px 0px rgba(0, 0, 0, 0.2);
+  box-shadow: 4px 4px 10px 0 rgba(0, 0, 0, 0.2);
   z-index: 1;
 }
 .btn::after {
@@ -282,7 +240,7 @@ h2 {
   z-index: -1;
   opacity: 0;
   background: linear-gradient(to bottom right, #ff8de0, #9e67e0);
-  box-shadow: 4px 4px 10px 0px rgba(0, 0, 0, 0.15);
+  box-shadow: 4px 4px 10px 0 rgba(0, 0, 0, 0.15);
   transition: opacity 150ms;
 }
 .btn:hover::after {
@@ -336,7 +294,49 @@ h2 {
     transform: scale(1);
   }
 }
-.home-link {
+.header {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #fff;
+}
+.header__title {
+  font-family: "Shrikhand", cursive;
+  margin: 1.1rem 0 0.675rem;
+}
+
+.footer {
+  background: #353535;
+  padding-bottom: 1.5rem;
+}
+
+.footer-nav {
+  padding-left: 1.625rem;
+}
+.footer-nav__heading {
+  font-family: "Shrikhand", cursive;
+  font-size: 1.125rem;
+  color: #FFF;
+  padding: 1.625rem 0 1.25rem;
+}
+.footer-nav__link {
+  padding-bottom: 0.5rem;
+}
+.footer-nav__link a {
+  font-size: 0.965rem;
+  color: #FFF;
+}
+.footer-nav__link .flatware-icon {
+  font-size: 0.75rem;
+  padding-right: 1.25rem;
+}
+.footer-nav__link .handshake-icon {
+  font-size: 0.625rem;
+  padding-right: 1.25rem;
+}
+
+.header__home-link {
   position: absolute;
   left: 1.5rem;
   font-size: 1.125rem;
@@ -347,26 +347,26 @@ h2 {
 }
 
 .restaurant-image {
-  height: 17rem;
+  height: 272px;
 }
 @media screen and (min-width: 410px) {
   .restaurant-image {
-    height: 18rem;
+    height: 288px;
   }
 }
 @media screen and (min-width: 540px) {
   .restaurant-image {
-    height: 21rem;
+    height: 336px;
   }
 }
 @media screen and (min-width: 768px) {
   .restaurant-image {
-    height: 24rem;
+    height: 384px;
   }
 }
 @media screen and (min-width: 992px) {
   .restaurant-image {
-    height: 26rem;
+    height: 416px;
   }
 }
 .restaurant-image img {
@@ -467,7 +467,7 @@ h2 {
   border-radius: 1rem;
   cursor: pointer;
   overflow: hidden;
-  box-shadow: 4px 4px 10px 0px rgba(0, 0, 0, 0.1);
+  box-shadow: 4px 4px 10px 0 rgba(0, 0, 0, 0.1);
   -webkit-animation: dish-animation 0.8s ease-out both 0.2s;
           animation: dish-animation 0.8s ease-out both 0.2s;
 }
@@ -561,7 +561,7 @@ h2 {
 }
 .restaurant-dish__check span {
   transform: rotate(-180deg);
-  transition: transform 0.3s ease-in 0.1s;
+  transition: transform 0.25s ease-in 0.15s;
 }
 
 @-webkit-keyframes dish-animation {

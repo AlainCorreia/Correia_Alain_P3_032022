@@ -159,12 +159,12 @@
 
     & span {
       transform: rotate(-180deg); // Initial rotation
-      transition: transform 0.3s ease-in 0.1s; // Transition properties
+      transition: transform 0.25s ease-in 0.15s; // Transition properties
     }
   }
 }
 
-// Animation of dish blocks appearance keyframes
+// Keyframes for animation of dish blocks appearance
 @keyframes dish-animation {
   0% {
     opacity: 0;

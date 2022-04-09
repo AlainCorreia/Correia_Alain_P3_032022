@@ -218,6 +218,124 @@ h2 {
   font-weight: 700;
 }
 
+.btn {
+  position: relative;
+  background: linear-gradient(to bottom right, #FF79DA, #9356DC);
+  color: #FFF;
+  font-size: 0.97rem;
+  font-weight: 400;
+  padding: 1rem 1.5rem;
+  border-radius: 2rem;
+  box-shadow: 4px 4px 10px 0 rgba(0, 0, 0, 0.2);
+  z-index: 1;
+}
+.btn::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  border-radius: 2rem;
+  z-index: -1;
+  opacity: 0;
+  background: linear-gradient(to bottom right, #ff8de0, #9e67e0);
+  box-shadow: 4px 4px 10px 0 rgba(0, 0, 0, 0.15);
+  transition: opacity 150ms;
+}
+.btn:hover::after {
+  opacity: 1;
+}
+
+.heart {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+.heart__icon--full {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background: linear-gradient(to top, #FF79DA, #9356DC);
+  color: transparent;
+  -webkit-background-clip: text;
+          background-clip: text;
+  font-weight: 900;
+  transform: scale(0);
+}
+.heart:hover .heart__icon {
+  opacity: 0;
+  transition: opacity 0.2s 0.4s;
+}
+.heart:hover .heart__icon--full {
+  -webkit-animation: heart-animation 0.7s forwards;
+          animation: heart-animation 0.7s forwards;
+}
+
+@-webkit-keyframes heart-animation {
+  0% {
+    transform: scale(0.1);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+@keyframes heart-animation {
+  0% {
+    transform: scale(0.1);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+.header {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #fff;
+}
+.header__title {
+  font-family: "Shrikhand", cursive;
+  margin: 1.1rem 0 0.675rem;
+}
+
+.footer {
+  background: #353535;
+  padding-bottom: 1.5rem;
+}
+
+.footer-nav {
+  padding-left: 1.625rem;
+}
+.footer-nav__heading {
+  font-family: "Shrikhand", cursive;
+  font-size: 1.125rem;
+  color: #FFF;
+  padding: 1.625rem 0 1.25rem;
+}
+.footer-nav__link {
+  padding-bottom: 0.5rem;
+}
+.footer-nav__link a {
+  font-size: 0.965rem;
+  color: #FFF;
+}
+.footer-nav__link .flatware-icon {
+  font-size: 0.75rem;
+  padding-right: 1.25rem;
+}
+.footer-nav__link .handshake-icon {
+  font-size: 0.625rem;
+  padding-right: 1.25rem;
+}
+
 .loading-overlay {
   width: 100%;
   height: 100%;
@@ -311,18 +429,6 @@ h2 {
     transform: translateX(0);
   }
 }
-.header {
-  position: relative;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background: #fff;
-}
-.header__title {
-  font-family: "Shrikhand", cursive;
-  margin: 1.1rem 0 0.675rem;
-}
-
 .location {
   display: flex;
   justify-content: center;
@@ -399,7 +505,7 @@ h2 {
   background: #F6F6F6;
   border-radius: 1.5rem;
   z-index: 1;
-  box-shadow: 4px 4px 10px 0px rgba(0, 0, 0, 0.2);
+  box-shadow: 4px 4px 10px 0 rgba(0, 0, 0, 0.2);
 }
 @media screen and (min-width: 992px) {
   .instructions {
@@ -498,7 +604,7 @@ h2 {
   border-radius: 1rem;
   margin-bottom: 1.25rem;
   z-index: 1;
-  box-shadow: 4px 4px 10px 0px rgba(0, 0, 0, 0.1);
+  box-shadow: 4px 4px 10px 0 rgba(0, 0, 0, 0.1);
 }
 @media screen and (min-width: 768px) {
   .card-restaurant {
@@ -516,7 +622,7 @@ h2 {
   border-radius: 1rem;
   z-index: -1;
   opacity: 0;
-  box-shadow: 4px 4px 10px 0px rgba(0, 0, 0, 0.3);
+  box-shadow: 4px 4px 10px 0 rgba(0, 0, 0, 0.3);
   transition: opacity 0.15s;
 }
 .card-restaurant:hover::after {
@@ -526,29 +632,29 @@ h2 {
   display: block;
 }
 .card-restaurant__image {
-  height: 11rem;
-  border-radius: 1rem 1rem 0 0;
+  height: 176px;
+  border-radius: 16px 16px 0 0;
   overflow: hidden;
   position: relative;
 }
 @media screen and (min-width: 410px) {
   .card-restaurant__image {
-    height: 12rem;
+    height: 192px;
   }
 }
 @media screen and (min-width: 768px) {
   .card-restaurant__image {
-    height: 13rem;
+    height: 208px;
   }
 }
 @media screen and (min-width: 768px) {
   .card-restaurant__image {
-    height: 14rem;
+    height: 224px;
   }
 }
 @media screen and (min-width: 992px) {
   .card-restaurant__image {
-    height: 15rem;
+    height: 240px;
   }
 }
 .card-restaurant__image img {
@@ -600,111 +706,4 @@ h2 {
 }
 .card-restaurant__description--heart {
   margin: 0 1.25rem 0.5rem 0;
-}
-
-.footer {
-  background: #353535;
-  padding-bottom: 1.5rem;
-}
-
-.footer-nav {
-  padding-left: 1.625rem;
-}
-.footer-nav__heading {
-  font-family: "Shrikhand", cursive;
-  font-size: 1.125rem;
-  color: #FFF;
-  padding: 1.625rem 0 1.25rem;
-}
-.footer-nav__link {
-  padding-bottom: 0.5rem;
-}
-.footer-nav__link a {
-  font-size: 0.965rem;
-  color: #FFF;
-}
-.footer-nav__link .flatware-icon {
-  font-size: 0.75rem;
-  padding-right: 1.25rem;
-}
-.footer-nav__link .handshake-icon {
-  font-size: 0.625rem;
-  padding-right: 1.25rem;
-}
-
-.btn {
-  position: relative;
-  background: linear-gradient(to bottom right, #FF79DA, #9356DC);
-  color: #FFF;
-  font-size: 0.97rem;
-  font-weight: 400;
-  padding: 1rem 1.5rem;
-  border-radius: 2rem;
-  box-shadow: 4px 4px 10px 0px rgba(0, 0, 0, 0.2);
-  z-index: 1;
-}
-.btn::after {
-  content: "";
-  position: absolute;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  border-radius: 2rem;
-  z-index: -1;
-  opacity: 0;
-  background: linear-gradient(to bottom right, #ff8de0, #9e67e0);
-  box-shadow: 4px 4px 10px 0px rgba(0, 0, 0, 0.15);
-  transition: opacity 150ms;
-}
-.btn:hover::after {
-  opacity: 1;
-}
-
-.heart {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  position: relative;
-  font-size: 1.5rem;
-  cursor: pointer;
-}
-.heart__icon--full {
-  position: absolute;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  background: linear-gradient(to top, #FF79DA, #9356DC);
-  color: transparent;
-  -webkit-background-clip: text;
-          background-clip: text;
-  font-weight: 900;
-  transform: scale(0);
-}
-.heart:hover .heart__icon {
-  opacity: 0;
-  transition: opacity 0.2s 0.4s;
-}
-.heart:hover .heart__icon--full {
-  -webkit-animation: heart-animation 0.7s forwards;
-          animation: heart-animation 0.7s forwards;
-}
-
-@-webkit-keyframes heart-animation {
-  0% {
-    transform: scale(0.1);
-  }
-  100% {
-    transform: scale(1);
-  }
-}
-
-@keyframes heart-animation {
-  0% {
-    transform: scale(0.1);
-  }
-  100% {
-    transform: scale(1);
-  }
 }/*# sourceMappingURL=main.css.map */

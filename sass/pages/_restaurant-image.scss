@@ -1,21 +1,21 @@
 .restaurant-image {
-  height: 17rem;
+  height: 272px;
 
   // Media queries - Make images taller on larger screens
   @include mobile-large {
-    height: 18rem;
+    height: 288px;
   }
 
   @include tablet-small {
-    height: 21rem;
+    height: 336px;
   }
 
   @include tablet {
-    height: 24rem;
+    height: 384px;
   }
 
   @include desktop {
-    height: 26rem;
+    height: 416px;
   }
 
   & img {

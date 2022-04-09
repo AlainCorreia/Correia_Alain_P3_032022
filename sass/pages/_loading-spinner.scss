@@ -17,9 +17,9 @@
     width: $spinner-size;
     height: $spinner-size;
     border-top: $spinner-border transparent solid;
-    border-right: $spinner-border #9356DC solid;
-    border-bottom: $spinner-border #FF79DA solid;
-    border-left: $spinner-border #99E2D0 solid;
+    border-right: $spinner-border $color-primary solid;
+    border-bottom: $spinner-border $color-secondary solid;
+    border-left: $spinner-border $color-tertiary solid;
     border-radius: 50%;
     animation: spin 0.6s infinite linear;
   }

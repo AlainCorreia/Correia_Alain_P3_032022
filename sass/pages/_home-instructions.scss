@@ -29,7 +29,7 @@
 
 .instructions {
   position: relative; // To position pseudo-element
-  width: calc(100% - $instructions-num-size * 0.5); // Compensate for the number disc shift 
+  width: calc(100% - $instructions-num-size * 0.5); // Correct the number disc shift 
   height: $instructions-height;
   margin-left: $instructions-num-size * 0.5; //Center the block
   margin-bottom: 1.5rem;
